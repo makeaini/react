@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-//定义一个高阶组件,主是对一个传入的组件进行拦截
+//定义一个高阶组件,主要是对一个传入的组件进行拦截
 function hoc(Cpn) {
     class NewCpn extends PureComponent {
         render() {
