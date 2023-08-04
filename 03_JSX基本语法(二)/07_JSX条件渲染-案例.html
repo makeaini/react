@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/babel.js"></script>
+    <script type="text/babel">
+        class App extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    message: "Hello Word",
+                    isShow: true
+                }
+            }
+            onChange() {
+                this.setState({
+                    isShow : !this.state.isShow
+                })
+            }
+            render() {
+                const { isShow ,message} = this.state
+                // let ele = null;
+                // if (isShow) {
+                //     ele = <h2>{message}</h2>
+                // } else {
+                //     ele = null
+                // }
+                return (
+                    <div>
+                        <button onClick={() => this.onChange()}>切换</button>
+                        <h2>{isShow &&  <h2>{message}</h2> }</h2>
+                    </div>
+                )
+            }
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"))
+        root.render(<App />)
+    </script>
+</body>
+
+</html>
